@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="088e5104-aeef-4e13-b5db-dc0b940a447f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/akel_semprace/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/akel_semprace/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/akel_semprace/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/akel_semprace/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/akel_semprace/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/akel_semprace/main-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/akel_semprace/Logic/LeftHeapNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/akel_semprace/Logic/LeftHeapNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/akel_semprace/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/akel_semprace/MainApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/akel_semprace/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/akel_semprace/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/akel_semprace/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/akel_semprace/main-view.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="28OolixdOkjtipfhH1hJhG8x6NT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
+  </component>
+  <component name="RunManager">
+    <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.akel_semprace.MainApp" />
+      <module name="Akel_SemPrace" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.akel_semprace.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainApp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="088e5104-aeef-4e13-b5db-dc0b940a447f" name="Changes" comment="" />
+      <created>1651097106008</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1651097106008</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -1,0 +1,32 @@
+.root{
+ -fx-background-color:#FF3CAC;
+ -fx-background-image: url("https://t4.ftcdn.net/jpg/04/60/71/01/360_F_460710131_YkD6NsivdyYsHupNvO3Y8MPEwxTAhORh.jpg");
+ -fx-border:1px solid white;
+ -fx-border-radius:7px;
+ -fx-box-shadow:5px 5px 10px white;
+}
+
+#DatumColumon{
+-fx-background-color:#949494
+}
+#M3Columon{
+-fx-background-color:#ffcc33
+}
+#SensorIdColumon{
+-fx-background-color:#ffcc33
+}
+#labelText{
+-fx-background-color:#ffcc33
+}
+#importFile, #CreatePFButton, #InsertItemButton, #GetItemButton, #IteratorButton, #CancelButton{
+-fx-background-color:#ffcc33
+}
+#GenerateButton, #ApplyFiltersId, #submitItemId{
+-fx-background-color:#ffcc33
+}
+.axis{
+-fx-stroke:#ff4d4d;
+-fx-fill:#ff4d4d;
+-fx-font-size:24;
+-fx-tick-label-fill:#ff4d4d;
+}

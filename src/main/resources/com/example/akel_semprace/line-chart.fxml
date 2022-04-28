@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="lineChart" prefHeight="701.0" prefWidth="991.0" styleClass="gradient-background" stylesheets="@../../../chartStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.akel_semprace.MainController">
+   <children>
+      <Label layoutX="397.0" prefHeight="50.0" prefWidth="153.0" style="-fx-background-color: #f7f7f7;" text="Line chart">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <LineChart fx:id="lineChart" layoutX="190.0" layoutY="61.0" prefHeight="330.0" prefWidth="500.0">
+        <xAxis>
+          <CategoryAxis label="Months" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis prefHeight="568.0" prefWidth="4.0" side="LEFT" style="-fx-background-color: #b8b8b8;" />
+        </yAxis>
+      </LineChart>
+   </children>
+</AnchorPane>

@@ -1,5 +1,6 @@
 package com.example.akel_semprace;
 
+import com.example.akel_semprace.Axis.DateAxis;
 import com.example.akel_semprace.DataLayer.CSVReader;
 import com.example.akel_semprace.DataLayer.Generator;
 import com.example.akel_semprace.DataLayer.RowInput;
@@ -10,22 +11,28 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Side;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class MainController {
     public TableView SensorTable;
@@ -48,10 +55,75 @@ public class MainController {
     private Stage stage;
     private Scene scene;
     private Parent parent;
-
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    LineChart<String,Number> lineChart;
+    @FXML
+    private PieChart pieChart;
+    private ObservableList<PieChart.Data> getChartData() {
+        ObservableList<PieChart.Data> list = FXCollections.observableArrayList();
+        list.addAll(new PieChart.Data("2018", 75),
+                new PieChart.Data("2019", 25)
+        );
+        return list;
+    }
+    public void displayChart(ActionEvent event) throws IOException {
+        if (this.Rows == null || this.Rows.size() == 0) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Cannot Display Data Charts");
+            alert.setHeaderText("Error!");
+            alert.setContentText("no Data  Input to display charts! please read a file or manually add some data ");
+            alert.showAndWait();
+        } else {
+            ObservableList<XYChart.Series<Date, Number>> series = FXCollections.observableArrayList();
+            ObservableList<XYChart.Data<Date, Number>> series1Data = FXCollections.observableArrayList();
+            series1Data.add(new XYChart.Data<Date, Number>(new GregorianCalendar(2018, 1, 6).getTime(), 0));
+            series1Data.add(new XYChart.Data<Date, Number>(new GregorianCalendar(2018, 2, 3).getTime(), 0.135));
+            series1Data.add(new XYChart.Data<Date, Number>(new GregorianCalendar(2018, 6, 6).getTime(), 0.080));
+            series1Data.add(new XYChart.Data<Date, Number>(new GregorianCalendar(2018, 9, 6).getTime(), 0.0035));
+            series1Data.add(new XYChart.Data<Date, Number>(new GregorianCalendar(2019, 11, 9).getTime(), 0.2565));
+            series.add(new XYChart.Series<>("Date", series1Data));
+
+            NumberAxis numberAxis = new NumberAxis();
+            DateAxis dateAxis = new DateAxis();
+            LineChart<Date, Number> lineChart = new LineChart<>(dateAxis, numberAxis, series);
+            lineChart.lookup(".chart-plot-background").setStyle("-fx-background-color: #9e9e9e");
+
+            //Creating a Group object
+            Image icon = new Image("C:\\Users\\ahmad.akel\\Desktop\\School\\BDATS\\Sensor-Measuring-Device\\src\\stats.png");
+            Group root = new Group(lineChart);
+            Stage stage = new Stage();
+            stage.setTitle("Line Chart");
+            //stage.setResizable(false);
+            stage.setX(10);
+            stage.setY(540);
+            stage.getIcons().add(icon);
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(MainController.class.getResource("/style.css").toExternalForm());
+            stage.setScene(scene);
+            stage.show();
+
+            //Getting PieChart
+            PieChart pieChart = new PieChart();
+            pieChart.setData(getChartData());
+            pieChart.setLegendSide(Side.LEFT);
+            pieChart.setTitle("Sensor Measuring Per Year");
+            pieChart.setClockwise(false);
+            //Creating layout
+
+            //Creating a Group object
+
+            Image icon2 = new Image("C:\\Users\\ahmad.akel\\Desktop\\School\\BDATS\\Sensor-Measuring-Device\\src\\graph.png");
+            Group root2 = new Group(pieChart);
+            Stage stage2 = new Stage();
+            stage2.setTitle("Pie Chart");
+            stage2.setResizable(false);
+            stage2.setX(10);
+            stage2.setY(105);
+            stage2.getIcons().add(icon2);
+            Scene scene2 = new Scene(root2);
+            stage2.setScene(scene2);
+            stage2.show();
+        }
     }
 
     public void readFile() throws ParseException {
@@ -74,6 +146,63 @@ public class MainController {
         // Setting Table Data
         CurrentTableData = data;
         setTableData(data);
+        if (this.Rows == null || this.Rows.size() == 0) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Cannot Display Data Charts");
+            alert.setHeaderText("Error!");
+            alert.setContentText("no Data  Input to display charts! please read a file or manually add some data ");
+            alert.showAndWait();
+        } else {
+            ObservableList<XYChart.Series<Date, Number>> series = FXCollections.observableArrayList();
+            ObservableList<XYChart.Data<Date, Number>> series1Data = FXCollections.observableArrayList();
+            series1Data.add(new XYChart.Data<Date, Number>(new GregorianCalendar(2018, 1, 6).getTime(), 0));
+            series1Data.add(new XYChart.Data<Date, Number>(new GregorianCalendar(2018, 2, 3).getTime(), 0.135));
+            series1Data.add(new XYChart.Data<Date, Number>(new GregorianCalendar(2018, 6, 6).getTime(), 0.080));
+            series1Data.add(new XYChart.Data<Date, Number>(new GregorianCalendar(2018, 9, 6).getTime(), 0.0035));
+            series1Data.add(new XYChart.Data<Date, Number>(new GregorianCalendar(2019, 11, 9).getTime(), 0.2565));
+            series.add(new XYChart.Series<>("Date", series1Data));
+
+            NumberAxis numberAxis = new NumberAxis();
+            DateAxis dateAxis = new DateAxis();
+            LineChart<Date, Number> lineChart = new LineChart<>(dateAxis, numberAxis, series);
+            lineChart.lookup(".chart-plot-background").setStyle("-fx-background-color: #9e9e9e");
+
+            //Creating a Group object
+            Image icon = new Image("C:\\Users\\ahmad.akel\\Desktop\\School\\BDATS\\Sensor-Measuring-Device\\src\\stats.png");
+            Group root = new Group(lineChart);
+            Stage stage = new Stage();
+            stage.setTitle("Line Chart");
+            //stage.setResizable(false);
+            stage.setX(10);
+            stage.setY(540);
+            stage.getIcons().add(icon);
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(MainController.class.getResource("/style.css").toExternalForm());
+            stage.setScene(scene);
+            stage.show();
+
+            //Getting PieChart
+            PieChart pieChart = new PieChart();
+            pieChart.setData(getChartData());
+            pieChart.setLegendSide(Side.LEFT);
+            pieChart.setTitle("Sensor Measuring Per Year");
+            pieChart.setClockwise(false);
+            //Creating layout
+
+            //Creating a Group object
+
+            Image icon2 = new Image("C:\\Users\\ahmad.akel\\Desktop\\School\\BDATS\\Sensor-Measuring-Device\\src\\graph.png");
+            Group root2 = new Group(pieChart);
+            Stage stage2 = new Stage();
+            stage2.setTitle("Pie Chart");
+            stage2.setResizable(false);
+            stage2.setX(10);
+            stage2.setY(105);
+            stage2.getIcons().add(icon2);
+            Scene scene2 = new Scene(root2);
+            stage2.setScene(scene2);
+            stage2.show();
+        }
     }
 
     private void setTableData(ObservableList<RowInput> data) {
@@ -288,7 +417,7 @@ public class MainController {
             return;
         }
         //Max Priority
-        var max =     Heap.deleteMin();
+        var max = Heap.deleteMin();
         System.out.println(max);
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Max Removed");

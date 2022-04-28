@@ -13,15 +13,15 @@
         <Button fx:id="CancelButton" layoutX="650.0" layoutY="431.0" mnemonicParsing="false" onAction="#reset" prefHeight="26.0" prefWidth="208.0" text="Zruš" />
         <Button fx:id="IteratorButton" layoutX="650.0" layoutY="357.0" mnemonicParsing="false" onAction="#iterate" prefHeight="26.0" prefWidth="208.0" text="Iterátor" />
         <Button fx:id="GetItemButton" layoutX="650.0" layoutY="269.0" mnemonicParsing="false" onAction="#getMax" prefHeight="26.0" prefWidth="208.0" text="OdberPrvek" />
-        <Button fx:id="InsertItemButton" layoutX="650.0" layoutY="188.0" mnemonicParsing="false" onAction="#insertItem" prefHeight="26.0" prefWidth="208.0" text="VložPrvek" />
+        <Button fx:id="InsertItemButton" layoutX="650.0" layoutY="188.0" mnemonicParsing="false" onAction="#displayChart" prefHeight="26.0" prefWidth="208.0" text="Viz Graf" />
         <Button fx:id="CreatePFButton" layoutX="650.0" layoutY="105.0" mnemonicParsing="false" onAction="#createPF" prefHeight="26.0" prefWidth="208.0" text="VytvořPF" />
-        <Label layoutX="26.0" layoutY="553.0" prefHeight="18.0" prefWidth="70.0" text="První Datum:" />
-        <Label layoutX="26.0" layoutY="602.0" prefHeight="18.0" prefWidth="80.0" text="Druhé Datum:" />
+        <Label fx:id="labelText" layoutX="26.0" layoutY="553.0" prefHeight="18.0" prefWidth="70.0" text="První Datum:" />
+        <Label fx:id="labelText" layoutX="26.0" layoutY="602.0" prefHeight="18.0" prefWidth="80.0" text="Druhé Datum:" />
         <Button fx:id="GenerateButton" layoutX="472.0" layoutY="542.0" mnemonicParsing="false" onAction="#generate" prefHeight="26.0" prefWidth="123.0" text="Generuj" />
         <TextField fx:id="firstDate" layoutX="133.0" layoutY="549.0" />
         <TextField fx:id="secondDate" layoutX="133.0" layoutY="598.0" />
       <Button fx:id="importFile" layoutX="650.0" layoutY="14.0" mnemonicParsing="false" onAction="#readFile" prefHeight="26.0" prefWidth="208.0" text="Načti" />
-      <TableView fx:id="SensorTable" layoutX="14.0" layoutY="16.0" prefHeight="490.0" prefWidth="619.0">
+      <TableView fx:id="SensorTable" layoutX="14.0" layoutY="14.0" prefHeight="490.0" prefWidth="619.0">
         <columns>
           <TableColumn fx:id="SensorIdColumon" prefWidth="130.0" text="SensorId" />
           <TableColumn fx:id="DatumColumon" prefWidth="335.0" text="Datum" />
@@ -29,11 +29,11 @@
         </columns>
       </TableView>
       <ComboBox fx:id="SensorsCombo" layoutX="133.0" layoutY="636.0" prefWidth="150.0" />
-      <Label layoutX="26.0" layoutY="640.0" text="Sensor Id:" />
+      <Label fx:id="labelText" layoutX="26.0" layoutY="640.0" text="Sensor Id:" />
       <Button fx:id="ApplyFiltersId" layoutX="472.0" layoutY="590.0" mnemonicParsing="false" onAction="#filterData" prefHeight="25.0" prefWidth="123.0" text="Apply Filtters" />
-      <Label layoutX="645.0" layoutY="641.0" text="M3:" />
-      <Label layoutX="641.0" layoutY="573.0" text="Date:" />
-      <Label layoutX="641.0" layoutY="512.0" text="Sensor_ID:" />
+      <Label fx:id="labelText" layoutX="645.0" layoutY="641.0" text="M3:" />
+      <Label fx:id="labelText" layoutX="641.0" layoutY="573.0" text="Date:" />
+      <Label fx:id="labelText" layoutX="641.0" layoutY="512.0" text="Sensor_ID:" />
       <TextField fx:id="ItemM3Id" layoutX="708.0" layoutY="637.0" />
       <TextField fx:id="ItemDateId" layoutX="708.0" layoutY="569.0" />
       <TextField fx:id="itemSensorId" layoutX="708.0" layoutY="508.0" />
